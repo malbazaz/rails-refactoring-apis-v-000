@@ -4,6 +4,6 @@ class SessionsController < ApplicationController
   def create
     github_repo = GithubRepo.new
     session[:token] = github_repo.authenticate!(ENV["GITHUB_CLIENT"],ENV["GITHUB_SECRET"],params[:code])
-    redirect_to '/'client_id: , client_secret: ,code: params[:code]
-  end
+    redirect_to '/'
+  end 
 end
