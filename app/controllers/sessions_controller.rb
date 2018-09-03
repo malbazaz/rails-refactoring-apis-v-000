@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
 
   def create
     github_repo = GithubRepo.new
-    session[:token]
+    session[:token] = github_repo.authenticate!()
     redirect_to '/'
   end
 end
